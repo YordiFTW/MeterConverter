@@ -1,0 +1,39 @@
+﻿@page
+@model test.Pages.LogModel
+@{
+}
+
+<h1>Log</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Calculation[0].Datum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Calculation[0].Waarde2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Calculation[0].Error)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Calculation)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Waarde2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Error)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

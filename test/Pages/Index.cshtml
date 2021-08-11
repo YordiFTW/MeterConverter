@@ -1,0 +1,66 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    ViewData["Waarde2"] = 0;
+
+
+
+}
+
+
+<form asp-page-handler="edit" method="post">
+    <div class="row1 col-md-3">
+        <div class="col">
+            <input  type="text" asp-for="Calculation.Waarde1" class="form-control" placeholder="waarde1" id="Waarde1">
+            <p></p>
+            <select id="inputState" class="form-control" asp-for="Calculation.KeuzeMenu">
+                <option value="1">Meter naar centimeter</option>
+                <option value="2">Centimeter naar meter</option>
+                <option value="3">Centimeter naar millimeter</option>
+                <option value="4">Millimeter naar centimeter</option>
+                <option value="5">Meter naar inch</option>
+                <option value="6">Inch naar meter</option>
+            </select>
+        </div>
+        <p></p>
+            <button class="btn btn-primary" >Bereken!</button>
+            <div class="col">
+
+                @*@if (showvalue == true)
+        {
+        <label class="form-control" asp-for="Calculation.Waarde2" value="@Model.Calculation.Waarde2"/>
+        }*@
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <dl style="text-align:center">
+                    <dd style="text-align:center" style="font-size:x-large">
+                        @Html.DisplayFor(model => model.Calculation.Waarde2)
+                    </dd>
+                </dl>
+                <p></p>
+                <dl style="text-align:center">
+                    <dd style="text-align:center" style="font-size:x-large">
+                        @Html.DisplayFor(model => model.Calculation.Error)
+                    </dd>
+                </dl>
+            </div>
+    </div>
+</form>
+
+
+
+<style type="text/css">
+    .row1 {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+        .row1 .col-md-3 {
+            display: inline-block;
+            vertical-align: middle;
+            float: none;
+        }
+</style>
